@@ -1,0 +1,176 @@
+/* Container principal */
+.container {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 50px auto; 
+    padding: 20px;
+}
+
+/* Título */
+.header-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.header-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Botões de ação */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #0056b3;
+}
+
+/* Tabela */
+.table-container {
+    overflow-x: auto;
+}
+
+.jewel-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.jewel-table th, 
+.jewel-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.jewel-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.jewel-table td {
+    color: #555;
+}
+
+.jewel-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status */
+.status-active {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.status-inactive {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Ações */
+.actions a {
+    text-decoration: none;
+    margin-right: 5px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;}
+
+.btn-view {
+    background-color: #17a2b8;
+}
+
+.btn-view:hover {
+    background-color: #117a8b;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #bd2130;
+}
+
+/* Paginação */
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Checkbox (para seleção múltipla) */
+.jewel-table input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.jewelry-table tbody tr {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.jewelry-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
