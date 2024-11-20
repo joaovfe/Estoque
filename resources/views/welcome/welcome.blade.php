@@ -18,6 +18,7 @@
                         <th>Nome</th>
                         <th>Material</th>
                         <th>Descrição</th>
+                        <th>Status</th>
                         <th>Preço</th>
                     </tr>
                 </thead>
@@ -27,11 +28,17 @@
                             <td>{{ $joia->nome }}</td>
                             <td>{{ $joia->material }}</td>
                             <td>{{ $joia->descricao }}</td>
+                            <td>{{ $joia->status }}</td>
                             <td>R$ {{ number_format($joia->preco, 2, ',', '.') }}</td>
                             <td>
-
                                 <button class="btn-edit" onclick="">Editar</button>
-                                <button class="btn-delete" onclick="">Excluir</button> 
+                                <button class="btn-delete" onclick="deleteItem({{ $joia->id_item }})">Excluir</button>
+                                <!-- Formulário de exclusão -->
+                                <form id="delete-form-{{ $joia->id_item }}" action="/deleteJoia" method="POST"
+                                    style="display:none;">
+                                    @csrf
+                                    <input type="hidden" name="id_item" value="{{ $joia->id_item }}">
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -50,4 +57,15 @@
 </main>
 
 <script>
+
+function deleteItem(id) {
+    var form = document.getElementById('delete-form-' + id);
+    if (form) {
+        if (confirm('Tem certeza que deseja excluir esta joia?')) {
+            form.submit(); 
+        }
+    } else {
+        alert('Formulário não encontrado!');
+    }
+}
 </script>
