@@ -9,8 +9,6 @@ class ListagemJoias extends Controller
 {
     public function listarJoias()
     {
-        $posts = [];
-
         $result = DB::table('estoque.item')
             ->select(
                 'item.id_item',
@@ -25,6 +23,7 @@ class ListagemJoias extends Controller
             )
             ->join('estoque.categoria', 'item.id_categoria', '=', 'categoria.id_categoria')
             ->join('estoque.status', 'item.id_status', '=', 'status.id_status')
+            ->orderby('id_item', 'ASC' )
             ->paginate(10); 
 
         return view('welcome/welcome', [

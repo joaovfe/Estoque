@@ -9,6 +9,7 @@ class Joia extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $primaryKey = 'id_item';
     protected $table = 'estoque.item'; 
 
