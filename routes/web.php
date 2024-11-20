@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddJoias;
 use App\Http\Controllers\ListagemJoias;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ListagemJoias::class, 'listarJoias']);
+Route::get('/AdicionarJoia', [AddJoias::class, 'addJoias']);
+Route::post('/addJoia', [AddJoias::class, 'salvarJoias']);
