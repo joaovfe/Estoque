@@ -7,27 +7,28 @@ use Illuminate\Support\Facades\DB;
 
 class ListagemJoias extends Controller
 {
-    public function listarJoias(){
+    public function listarJoias()
+    {
         $posts = [];
-    
+
         $result = DB::table('estoque.item')
-            ->select('*')
-            ->get();
-    
-        foreach($result as $config){
-            $posts[] = [
-                'id_item' => $config->id_item,
-                'nome' => $config->nome,
-                'descricao' => $config->descricao,
-                'preco' => $config->preco,
-                'material' => $config->material,
-                'data_criacao' => $config->data_criacao,
-                'id_categoria' => $config->id_categoria,
-            ];
-        }
-        // dd($posts);
+            ->select(
+                'item.id_item',
+                'item.nome',
+                'item.descricao',
+                'item.preco',
+                'item.material',
+                'item.data_criacao',
+                'item.id_categoria',
+                'categoria.nome as categoria',
+                'status.status_nome as status'
+            )
+            ->join('estoque.categoria', 'item.id_categoria', '=', 'categoria.id_categoria')
+            ->join('estoque.status', 'item.id_status', '=', 'status.id_status')
+            ->paginate(10); 
+
         return view('welcome/welcome', [
-            'listagem_joias' => $posts
+            'listagem_joias' => $result
         ]);
     }
 }
