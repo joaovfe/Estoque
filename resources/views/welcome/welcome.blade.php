@@ -31,8 +31,9 @@
                             <td>{{ $joia->status }}</td>
                             <td>R$ {{ number_format($joia->preco, 2, ',', '.') }}</td>
                             <td>
-                                <button class="btn-edit" onclick="">Editar</button>
-                                <button class="btn-delete" onclick="deleteItem({{ $joia->id_item }})">Excluir</button>
+                            <a href="{{ route('detalheJoia', ['id' => $joia->id_item]) }}" class="btn-edit">Editar</a>
+                            
+                            <button class="btn-delete" onclick="deleteItem({{ $joia->id_item }})">Excluir</button>
                                 <!-- Formulário de exclusão -->
                                 <form id="delete-form-{{ $joia->id_item }}" action="/deleteJoia" method="POST"
                                     style="display:none;">
