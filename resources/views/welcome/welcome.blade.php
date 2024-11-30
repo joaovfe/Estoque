@@ -8,7 +8,8 @@
 
         <div class="button-container">
             <a href="/AdicionarJoia" class="btn-add">+ Adicionar Joia</a>
-        </div>
+            <a href="/lancamentos" class="btn-lancamentos">Ver Lançamentos</a>
+            </div>
 
         <!-- Tabela de listagem -->
         <div class="table-container">
