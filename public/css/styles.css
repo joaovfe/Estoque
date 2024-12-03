@@ -6,7 +6,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 600px;
-    margin: 50px auto; 
+    margin: 50px auto;
     padding: 20px;
 }
 
@@ -92,31 +92,35 @@
     font-weight: 500;
 }
 
-/* Ações */
-.actions a {
+/* Botões de Ações (Editar e Excluir) */
+.actions a,
+.btn-edit,
+.btn-delete {
     text-decoration: none;
-    margin-right: 5px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-size: 14px;
     color: #fff;
     display: inline-block;
-    text-align: center;}
-
-.btn-view {
-    background-color: #17a2b8;
-}
-
-.btn-view:hover {
-    background-color: #117a8b;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-edit {
     background-color: #ffc107;
+    font-weight: 600;
 }
 
 .btn-edit:hover {
     background-color: #e0a800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
+}
+
+.btn-edit:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .btn-delete {
@@ -125,6 +129,36 @@
 
 .btn-delete:hover {
     background-color: #bd2130;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.btn-delete:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Ícones dentro dos botões */
+.btn-edit::before,
+.btn-delete::before {
+    margin-right: 8px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.btn-edit::before {
+    content: "✎"; /* Ícone de editar */
+}
+
+.btn-delete::before {
+    content: "🗑"; /* Ícone de excluir */
+}
+
+/* Ajustes para a tabela, incluindo as ações */
+.jewelry-table td {
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Paginação */

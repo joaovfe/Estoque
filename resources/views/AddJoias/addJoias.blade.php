@@ -4,6 +4,7 @@
 <head>
     <title>Adicionar Joia</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -97,13 +98,13 @@
                     nome: nomeJoia,
                     preco: preco,
                     id_categoria: categoria,
-                    id_status: status, 
+                    id_status: status,
                 }),
             })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert(data.message);  
+                        alert(data.message);
                         document.getElementById('form-add-joia').reset();
                     } else {
                         alert('Erro ao adicionar joia.');
@@ -122,20 +123,77 @@
     </script>
 
     <style>
+        .container {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
         }
 
         .btn {
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #007bff;
             color: white;
+            font-size: 16px;
+            font-weight: 600;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            margin-right: 10px;
         }
 
         .btn:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -144,6 +202,32 @@
 
         .btn-secondary:hover {
             background-color: #5a6368;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"],
+        select {
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
     </style>
 </body>
