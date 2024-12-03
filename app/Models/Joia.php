@@ -11,7 +11,7 @@ class Joia extends Model
 
     public $timestamps = false;
     protected $primaryKey = 'id_item';
-    protected $table = 'estoque.item'; 
+    protected $table = 'estoque_teste.item'; 
 
     protected $fillable = [
         'id_item',

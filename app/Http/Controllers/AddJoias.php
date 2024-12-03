@@ -9,10 +9,10 @@ class AddJoias extends Controller
 {
     public function addJoias(){
 
-        $categories = DB::table('estoque.categoria')
+        $categories = DB::table('estoque_teste.categoria')
         ->get();
 
-        $status = DB::table('estoque.status')
+        $status = DB::table('estoque_teste.status')
         ->get();
 
         return view('AddJoias/addJoias', [
@@ -24,7 +24,7 @@ class AddJoias extends Controller
 
 
     public function salvarJoias(Request $request){
-        DB::table('estoque.item')->insert([
+        DB::table('estoque_teste.item')->insert([
             'material' => $request->input('material'),
             'descricao' => $request->input('descricao'),
             'nome' => $request->input('nome'),

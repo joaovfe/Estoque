@@ -9,7 +9,7 @@ class ListagemJoias extends Controller
 {
     public function listarJoias()
     {
-        $result = DB::table('estoque.item')
+        $result = DB::table('estoque_teste.item')
             ->select(
                 'item.id_item',
                 'item.nome',
@@ -21,8 +21,8 @@ class ListagemJoias extends Controller
                 'categoria.nome as categoria',
                 'status.status_nome as status'
             )
-            ->join('estoque.categoria', 'item.id_categoria', '=', 'categoria.id_categoria')
-            ->join('estoque.status', 'item.id_status', '=', 'status.id_status')
+            ->join('estoque_teste.categoria', 'item.id_categoria', '=', 'categoria.id_categoria')
+            ->join('estoque_teste.status', 'item.id_status', '=', 'status.id_status')
             ->orderby('id_item', 'ASC' )
             ->paginate(10); 
 

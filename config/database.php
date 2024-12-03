@@ -74,7 +74,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'schema' => 'estoque',
+            'schema' => 'estoque_teste',
             'sslmode' => 'prefer',
         ],
 
