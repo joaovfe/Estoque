@@ -28,12 +28,15 @@
                             <td>{{ $joia->nome }}</td>
                             <td>{{ $joia->material }}</td>
                             <td>{{ $joia->descricao }}</td>
-                            <td>{{ $joia->status }}</td>
+                            <td id="status">
+                                <span
+                                    class="status-indicator {{ $joia->status === 'ativo' ? 'active' : 'inactive' }}"></span>
+                            </td>
                             <td>R$ {{ number_format($joia->preco, 2, ',', '.') }}</td>
                             <td>
-                            <a href="{{ route('detalheJoia', ['id' => $joia->id_item]) }}" class="btn-edit">Editar</a>
-                            
-                            <button class="btn-delete" onclick="deleteItem({{ $joia->id_item }})">Excluir</button>
+                                <a href="{{ route('detalheJoia', ['id' => $joia->id_item]) }}" class="btn-edit">Editar</a>
+
+                                <button class="btn-delete" onclick="deleteItem({{ $joia->id_item }})">Excluir</button>
                                 <!-- Formulário de exclusão -->
                                 <form id="delete-form-{{ $joia->id_item }}" action="/deleteJoia" method="POST"
                                     style="display:none;">
@@ -59,14 +62,14 @@
 
 <script>
 
-function deleteItem(id) {
-    var form = document.getElementById('delete-form-' + id);
-    if (form) {
-        if (confirm('Tem certeza que deseja excluir esta joia?')) {
-            form.submit(); 
+    function deleteItem(id) {
+        var form = document.getElementById('delete-form-' + id);
+        if (form) {
+            if (confirm('Tem certeza que deseja excluir esta joia?')) {
+                form.submit();
+            }
+        } else {
+            alert('Formulário não encontrado!');
         }
-    } else {
-        alert('Formulário não encontrado!');
     }
-}
 </script>
